@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asset extends Model
 {
-    protected $fillabe = [
+    protected $fillable = [
         'code',
         'name',
         'type',

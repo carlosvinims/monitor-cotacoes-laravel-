@@ -30,7 +30,7 @@ class AlertService
         return $triggeredCount;
     }
 
-    private function shoulTrigger(PriceAlert $alert): bool
+    private function shouldTrigger(PriceAlert $alert): bool
     {
         $currentPrice = (float) $alert->asset->current_price;
         $targetPrice = (float) $alert->target_price;
@@ -54,7 +54,7 @@ class AlertService
             ->send(new PriceAlertTriggered($alert));
         } catch (\Throwable $exception) {
             Log::error('Falha ao enviar alerta por e-mail.', [
-                'lert_id' => $alert->id,
+                'alert_id' => $alert->id,
                 'user_id' => $alert->user_id,
                 'error' => $exception->getMessage(),
             ]);

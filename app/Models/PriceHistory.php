@@ -16,7 +16,7 @@ class PriceHistory extends Model
 
     protected function casts(): array
     {
-        retunr [
+        return [
             'price' => 'decimal:4',
             'high_price' => 'decimal:4',
             'low_price'  => 'decimal:4',
